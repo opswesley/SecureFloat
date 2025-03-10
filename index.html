@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureFloat - Gerador de Senhas</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/9858/9858120.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1><i class="fas fa-lock"></i> SecureFloat</h1>
+        </header>
+        <section class="input-section">
+            <label for="use-custom">
+                <input type="checkbox" id="use-custom"> Usar uma senha personalizada
+            </label>
+            <div class="custom-options" id="custom-options" style="display: none;">
+                <label for="custom-password">Sua senha base:</label>
+                <input type="text" id="custom-password" placeholder="Ex.: minhapalavra" autocomplete="off">
+                <label for="mix-mode">Modo de combinação:</label>
+                <select id="mix-mode">
+                    <option value="mix">Misturar tudo</option>
+                    <option value="before">Adicionar no início</option>
+                    <option value="middle">Adicionar no meio</option>
+                    <option value="after">Adicionar no final</option>
+                </select>
+            </div>
+        </section>
+        <section class="options">
+            <div class="range-option">
+                <label for="length">Tamanho da senha: <span id="length-value">12</span></label>
+                <input type="range" id="length" min="6" max="20" value="12">
+            </div>
+            <label for="uppercase">
+                <input type="checkbox" id="uppercase"> Incluir letras maiúsculas (A-Z)
+            </label>
+            <label for="lowercase">
+                <input type="checkbox" id="lowercase"> Incluir letras minúsculas (a-z)
+            </label>
+            <label for="numbers">
+                <input type="checkbox" id="numbers"> Incluir números (0-9)
+            </label>
+            <label for="symbols">
+                <input type="checkbox" id="symbols"> Incluir símbolos (!@#$%)
+            </label>
+        </section>
+        <button id="generate">Gerar Senha</button>
+        <section class="result">
+            <input type="text" id="password" readonly aria-label="Senha gerada">
+            <button id="copy"><i class="fas fa-copy"></i> Copiar</button>
+        </section>
+        <section class="strength-meter">
+            <span id="strength-text">Força: Nenhuma</span>
+            <div id="strength-bar"></div>
+        </section>
+        <footer class="credits">
+            Desenvolvido por <a href="https://github.com/opswesley" target="_blank">opswesley</a>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
